@@ -10,11 +10,6 @@ jQuery(function($) {'use strict';
 		});
 	});
 
-	//Fit Vids
-	if( $('#video-container').length ) {
-		$("#video-container").fitVids();
-	}
-
 	//Initiat WOW JS
 	new WOW().init();
 
@@ -63,51 +58,38 @@ jQuery(function($) {'use strict';
 		$('.field-toggle').fadeToggle(200);
 	});
 
-	// Contact form
-	var form = $('#main-contact-form');
-	form.submit(function(event){
-		event.preventDefault();
-		var form_status = $('<div class="form_status"></div>');
-		$.ajax({
-			url: $(this).attr('action'),
-			beforeSend: function(){
-				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
-			}
-		}).done(function(data){
-			form_status.html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
-		});
-	});
+
 
 	// Progress Bar
 	$.each($('div.progress-bar'),function(){
 		$(this).css('width', $(this).attr('data-transition')+'%');
+	});       
+
+});
+
+$(document).ready(function() {
+    $('#autocomplete').on("keypress", function(e) {
+        if (e.keyCode == 13) {
+        	  var ingredient = $('#autocomplete').val();
+		      var thehtml = '<li class="btn btn-lg btn-primary groceryItem">' + ingredient + "</li>";
+		      $('#outputcontent').append(thehtml);
+		      //Push ingredient into JS groceries Array
+		      $('#autocomplete').val('');
+		      return false;
+        }
+	});
+	$('#grocerySearchIcon').on("click", function(e) {
+    	  var ingredient = $('#autocomplete').val();
+	      var thehtml = '<li class="btn btn-lg btn-primary groceryItem">' + ingredient + "</li>";
+	      $('#outputcontent').append(thehtml);
+	      //Push ingredient into JS groceries Array
+	      $('#autocomplete').val('');
 	});
 
-	if( $('#gmap').length ) {
-		var map;
-
-		map = new GMaps({
-			el: '#gmap',
-			lat: 43.04446,
-			lng: -76.130791,
-			scrollwheel:false,
-			zoom: 16,
-			zoomControl : false,
-			panControl : false,
-			streetViewControl : false,
-			mapTypeControl: false,
-			overviewMapControl: false,
-			clickable: false
-		});
-
-		map.addMarker({
-			lat: 43.04446,
-			lng: -76.130791,
-			animation: google.maps.Animation.DROP,
-			verticalAlign: 'bottom',
-			horizontalAlign: 'center',
-			backgroundColor: '#3e8bff',
-		});
-	}
+	$('#outputcontent').on('click', '.groceryItem', function() {
+		var thisItem = $(this).text();
+		//Search JS groceries array for 'thisItem', remove it
+		$(this).remove();
+	});
 
 });
