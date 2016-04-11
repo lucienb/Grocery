@@ -69,7 +69,8 @@
         </div>
    </section>
     <!--/#action-->
-
+    <center><div id="choices">
+    </div></center>
     <section class="container">        
         <div class="cal-table">
             <div class="row groceryTable" style="margin-bottom: 30px;">
@@ -78,9 +79,10 @@
                         <div class="table-heading">
                             <p class="day-name">Monday</p>
                         </div>
-                        <div class="table-body text-center">
-                            <img src="images/recipeSearch/10.jpg" class="img-responsive calImg" alt="">
-                            <p>Recipe Title</p>
+                        <div class="table-body text-center" id="monday">
+			    <p>Enter id of desired dish</p>
+			    <input id="monform"></input>
+                            <a href="#" onclick="doDay(monday)"><i class="fa fa-plus-circle"></i></a>
                         </div>
                     </div>
                 </div>
@@ -89,9 +91,10 @@
                         <div class="table-heading">
                             <p class="day-name">Tuesday</p>
                         </div>                        
-                        <div class="table-body text-center">
-                            <img src="images/recipeSearch/11.jpg" class="img-responsive calImg" alt="">
-                            <p>Recipe Title</p>
+                        <div class="table-body text-center" id="tuesday">
+			    <p>Enter id of desired dish</p>
+			    <input id="tuesform"></input>
+                            <a href="#" onclick="doDay(tuesday)"><i class="fa fa-plus-circle"></i></a> 
                         </div>
                     </div>
                 </div>
@@ -100,9 +103,10 @@
                         <div class="table-heading">
                             <p class="day-name">Wednesday</p>
                         </div>
-                        <div class="table-body text-center">
-                            <img src="images/recipeSearch/12.jpg" class="img-responsive calImg" alt="">
-                            <p>Recipe Title</p>
+                        <div class="table-body text-center" id="wednesday">
+			    <p>Enter id of desired dish</p>
+			    <input id="wedform"></input>
+                            <a href="#" onclick="doDay(wednesday)"><i class="fa fa-plus-circle"></i></a>                           
                         </div>
                     </div>
                 </div>
@@ -111,8 +115,10 @@
                         <div class="table-heading">
                             <p class="day-name">Thursday</p>
                         </div>
-                        <div class="table-body text-center">
-                            <a href="#"><i class="fa fa-plus-circle"></i></a>
+                        <div class="table-body text-center" id="thursday">
+			    <p>Enter id of desired dish</p>
+			    <input id="thursform"></input>
+                            <a href="#" onclick="doDay(thursday)"><i class="fa fa-plus-circle"></i></a>
                         </div>
                     </div>
                 </div>
@@ -121,8 +127,10 @@
                         <div class="table-heading">
                             <p class="day-name">Friday</p>
                         </div>                         
-                        <div class="table-body text-center">
-                            <a href="#"><i class="fa fa-plus-circle"></i></a>
+                        <div class="table-body text-center" id="friday">
+			    <p>Enter id of desired dish</p>
+			    <input id="friform"></input>
+                            <a href="#" onclick="doDay(friday)"><i class="fa fa-plus-circle"></i></a>
                         </div>
                     </div>
                 </div>
@@ -131,8 +139,10 @@
                         <div class="table-heading">
                             <p class="day-name">Saturday</p>
                         </div>                        
-                        <div class="table-body text-center">
-                            <a href="#"><i class="fa fa-plus-circle"></i></a>
+                        <div class="table-body text-center" id="saturday">
+			    <p>Enter id of desired dish</p>
+			    <input id="satform"></input>
+                            <a href="#" onclick="doDay(saturday)"><i class="fa fa-plus-circle"></i></a>
                         </div>
                     </div>
                 </div>
@@ -141,22 +151,13 @@
             <div class="row">
                 <h3>Groceries So Far:</h3>
             </div>
-            <div class="row" id="weekGroceryList">
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
-                <div class="col-xs-3 col-sm-2" style="border-bottom-style: groove; border-right-style: groove; margin: 5px;" ><p class="alignleft">Ingredient Here</p><i class="alignright fa fa-times-circle-o"></i><div style="clear: both;"></div></div>
+            <div class="row">
+		 <div class="col-sm-6 col-md-2" id="m"></div>  
+		 <div class="col-sm-6 col-md-2" id="t"></div> 
+		 <div class="col-sm-6 col-md-2" id="w"></div> 
+		 <div class="col-sm-6 col-md-2" id="th"></div> 
+		 <div class="col-sm-6 col-md-2" id="f"></div> 
+		 <div class="col-sm-6 col-md-2" id="s"></div>    
             </div>
 
         </div>
@@ -194,5 +195,6 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>   
+    <script type="text/javascript" src="js/jqueryOwn.js"></script>   
 </body>
 </html>
