@@ -16,7 +16,6 @@ $(document).ready(function() {
     var myQuery = document.getElementById("inputbox").value;
     var urls = "https://api2.bigoven.com/recipes?title_kw=" + myQuery + "&pg=1&rpp=20&api_key=2MX8tWBt2B3U5VWChEngoRCT4dnHx8Uf";
     document.getElementById("inputbox").value = "";
-    //
     $.ajax({
       url: urls,
       dataType: 'json',
@@ -51,7 +50,6 @@ $(document).ready(function() {
           }
 
         });
-
       }
 
     });
@@ -305,7 +303,6 @@ $(document).ready(function() {
       var myQuery = document.getElementById("inputbox").value;
       var urls = "https://api2.bigoven.com/recipes?title_kw=" + myQuery + "&pg=1&rpp=20&api_key=2MX8tWBt2B3U5VWChEngoRCT4dnHx8Uf";
       document.getElementById("inputbox").value = "";
-      //
       $.ajax({
         url: urls,
         dataType: 'json',
@@ -334,6 +331,7 @@ $(document).ready(function() {
               number++;
             }
 
+
           });
 
         }
@@ -341,3 +339,4 @@ $(document).ready(function() {
       });
     });
 })
+
