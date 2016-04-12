@@ -67,7 +67,60 @@ jQuery(function($) {'use strict';
 
 });
 
+function openLogin() {
+	$('#homePageDiv').hide();
+	$('#planPageDiv').hide();
+	$('#grocerySearchDiv').hide();
+	$('#recipeSearchDiv').hide();
+	$('#normalHeaderDiv').hide();
+	$('#loginHeaderDiv').show();
+	$('#loginDiv').show();
+}
+
+function openHome() {
+	$('#loginDiv').hide();
+	$('#planPageDiv').hide();
+	$('#grocerySearchDiv').hide();
+	$('#recipeSearchDiv').hide();
+	$('#loginHeaderDiv').hide();
+	$('#normalHeaderDiv').show();
+	$('#homePageDiv').show();
+}
+
+function openPlan() {
+	$('#loginDiv').hide();
+	$('#homePageDiv').hide();
+	$('#grocerySearchDiv').hide();
+	$('#recipeSearchDiv').hide();
+	$('#loginHeaderDiv').hide();
+	$('#normalHeaderDiv').show();
+	$('#planPageDiv').show();
+}
+
+function openGrocery() {
+	$('#loginDiv').hide();
+	$('#homePageDiv').hide();
+	$('#planPageDiv').hide();
+	$('#recipeSearchDiv').hide();
+	$('#loginHeaderDiv').hide();
+	$('#normalHeaderDiv').show();
+	$('#grocerySearchDiv').show();
+}
+
+function openRecipe() {
+	$('#loginDiv').hide();
+	$('#homePageDiv').hide();
+	$('#planPageDiv').hide();
+	$('#grocerySearchDiv').hide();
+	$('#loginHeaderDiv').hide();
+	$('#normalHeaderDiv').show();
+	$('#recipeSearchDiv').show();
+}
+
+
 $(document).ready(function() {
+	openLogin();
+
     $('#autocomplete').on("keypress", function(e) {
         if (e.keyCode == 13) {
         	  var ingredient = $('#autocomplete').val();
@@ -84,6 +137,7 @@ $(document).ready(function() {
 	      $('#outputcontent').append(thehtml);
 	      //Push ingredient into JS groceries Array
 	      $('#autocomplete').val('');
+	      console.log(groceries);
 	});
 
 	$('#outputcontent').on('click', '.groceryItem', function() {

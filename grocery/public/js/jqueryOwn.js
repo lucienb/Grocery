@@ -108,6 +108,7 @@ function doDay(day){
                             else{
                             var fullInfo = quantity+" "+unit+" "+name;
 			    groceries.push(fullInfo);
+          console.log(groceries);
 if(day === monday)
 {
 	$( "#m" ).append('<div class="btn-lg btn-primary" id="' + i + '"/><p class="alignleft"></p><div style="clear: both;"></div></div>');
