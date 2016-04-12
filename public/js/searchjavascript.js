@@ -16,6 +16,12 @@ $("form").submit(function (e) {
            var link="link";
            var number=1;
            var title="text";
+           if(data['Results'].length==0)
+           {
+            console.log("Failure");
+            alert("Invalid Search Please Try Again");
+            location.reload();
+           }
           $.each(data['Results'], function(name2, value)
           {
            if(number<17)
@@ -43,7 +49,6 @@ $("form").submit(function (e) {
 
     $("#icon").click(
     function(e){     
-
      var myQuery = document.getElementById("inputbox").value;
       var urls ="https://api2.bigoven.com/recipes?title_kw="+myQuery+"&pg=1&rpp=20&api_key=2MX8tWBt2B3U5VWChEngoRCT4dnHx8Uf";
       document.getElementById("inputbox").value = "";
@@ -57,6 +62,12 @@ $("form").submit(function (e) {
            var link="link";
            var number=1;
            var title="text";
+           if(data['Results'].length==0)
+           {
+            console.log("Failure");
+            alert("Invalid Search Please Try Again");
+            location.reload();
+           }
           $.each(data['Results'], function(name2, value)
           {
            if(number<17)
