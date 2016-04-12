@@ -1,3 +1,17 @@
+
+
+
+/*
+$("#inputbox").keyup(function(event){
+  var keycode = (event.keyCode ? event.keyCode : event.which);
+   if(event.keycode == 13){
+      console.log("I hit enter");
+        $("#icon").click();
+
+    }
+});
+*/
+
 $(document).ready(function(){
     $("#icon").click(
     function(e){     
