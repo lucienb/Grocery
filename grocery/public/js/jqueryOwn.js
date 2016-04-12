@@ -95,7 +95,10 @@ function doDay(day){
             success: function (xml) {
             console.log(xml); 
             var title = $(xml).find('Title').text();
-            var imgUrl = $(xml).find('ImageURL').text();
+            var imgUrl = "";
+                imgUrl = $(xml).find('ImageURL').text();
+                if(imgUrl === "")
+		{imgUrl = "http://photos.bigoven.com/recipe/hero/recipe-no-image.jpg"}
 			  var synonyms = $(xml).find('Ingredients')
    			  synonyms.find('Ingredient').each(function()
 			  {
