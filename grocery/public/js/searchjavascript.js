@@ -10,6 +10,11 @@ $("#inputbox").keyup(function(event){
 
     }
 });
+
+$("form").submit(function (e) {
+            e.preventDefault();
+            alert("call some function here");
+        });
 */
 
 $(document).ready(function(){
