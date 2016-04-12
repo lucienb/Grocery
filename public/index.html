@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | FoodHub</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet"> 
+    <link href="css/lightbox.css" rel="stylesheet"> 
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	<header id="header">      
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                        <h1><img src="images/FoodHubLogo.png" width="300px" alt="logo"></h1>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="mealPlan.html"><i class="fa fa-calendar"></i>&nbspMeal Planning</a></li> 
+                        <li><a href="groceryList.html"><i class="fa fa-shopping-cart"></i>&nbspGrocery List</a></li>
+                        <li><a href="recipeSearch.html"><i class="fa fa-search"></i>&nbspRecipe Search</a></li>            
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+    <section id="home-slider">
+        <div class="container">
+            <div class="row">
+                <div class="main-slider">
+                    <div class="slide-text">
+                        <h1>Welcome, <span class="userName">User!</span></h1>
+                        <p>We have three options for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="preloader"><i class="fa fa-sun-o fa-spin"></i></div>
+    </section>
+    <!--/#home-slider-->
+
+    <section id="services">
+        <div class="container">
+            <div class="row" id="optionsBox">
+                
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
+                            <a href="mealPlan.html"><i style="font-size: 100px;  color: #BBE2BC; padding-bottom:10px;" class="fa fa-calendar"></i></a>
+                        </div>
+                        <a href="mealPlan.html">
+                        	<h2>Plan Meals</h2>
+                        	<p style="color: gray;">Eliminate the question of what you're going to eat by searching a database of over 350,000 favorite recipes.</p>
+                    	</a>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
+                            <a href="groceryList.html"><i style="font-size: 100px; color: #BBE2BC; padding-bottom:10px;" class="fa fa-shopping-cart"></i></a>
+                        </div>
+                        <a href="groceryList.html">
+                        	<h2>Grocery List</h2>
+                        	<p style="color: gray;">Manage the Groceries you need in order to cook your favorite Meals - automatically from your recipes, or manaully yourself!</p>
+                    	</a>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
+                    <div class="single-service">
+                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
+                            <a href="recipeSearch.html"><i style="font-size: 100px;  color: #BBE2BC; padding-bottom:10px;" class="fa fa-search"></i></a>
+                        </div>
+                        <a href="recipeSearch.html">
+                        	<h2>Search Recipes</h2>
+                        	<p style="color: gray;">Let's face it, sometimes you don't have a planned week of meals, and you're just in the mood for shrimp-something-or-other tonight.</p>
+                    	</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#services-->
+
+    <div id="footerSpacer">
+    </div>
+    <footer id="footer" style="position: fixed; bottom: 0px; width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="copyright-text text-center">
+                        <p>&copy; Our Group.</p>
+                        <p>Powered by <a target="_blank" href="http://http://www.bigoven.com/">Big Oven</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/lightbox.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>   
+</body>
+</html>
