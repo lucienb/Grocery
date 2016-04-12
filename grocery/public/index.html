@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | FoodHub</title>
+    <title>FoodHub | Recipe Sharing</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet"> 
@@ -37,7 +37,7 @@
 	                        <span class="icon-bar"></span>
 	                    </button>
 
-	                    <a class="navbar-brand" onclick="openHome()">
+	                    <a class="navbar-brand" onclick="location.reload();">
 	                        <h1><img src="images/FoodHubLogo.png" width="300px" alt="logo"></h1>
 	                    </a>
 	                    
@@ -45,9 +45,9 @@
 	                <div class="collapse navbar-collapse">
 	                    <ul class="nav navbar-nav navbar-right">
 	                        <li><a class="active" href="#" onclick="openHome()">Home</a></li>
+	                        <li><a href="#" onclick="openRecipe()"><i class="fa fa-search"></i>&nbspRecipe Search</a></li>  
 	                        <li><a href="#" onclick="openPlan()"><i class="fa fa-calendar"></i>&nbspMeal Planning</a></li> 
 	                        <li><a href="#" onclick="openGrocery()"><i class="fa fa-shopping-cart"></i>&nbspGrocery List</a></li>
-	                        <li><a href="#" onclick="openRecipe()"><i class="fa fa-search"></i>&nbspRecipe Search</a></li>            
 	                    </ul>
 	                </div>
 	            </div>
@@ -73,11 +73,6 @@
 	                    </a>
 	                    
 	                </div>
-	                <div class="collapse navbar-collapse">
-	                    <ul class="nav navbar-nav navbar-right">
-	                        <li><a onclick="openRecipe()"><i class="fa fa-search"></i>&nbspRecipe Search</a></li>            
-	                    </ul>
-	                </div>
 	            </div>
 	        </div>
 	    </header>
@@ -95,8 +90,8 @@
 	                            <div class="row">
 	                                <div class="main-slider">
 	                                    <div class="slide-text" style="margin-left: 30px;">
-	                                        <h1>Please Log In</h1>
-	                                        <p>You won't be able to do anything on the site if you don't... #sorrynotsorry</p>
+	                                        <h1>Enter a username</h1>
+	                                        <p>Type in a username to create or view recipes and grocery lists</p>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -108,22 +103,13 @@
 	                    <div class="col-sm-6 col-sm-offset-3">
 	                        <form id="main-contact-form" name="contact-form" method="post">
 	                            <div class="form-group">
-	                                <input type="text" name="name" class="form-control" required="required" placeholder="Name" style="background-image: none; background-position: 0% 0%; background-repeat: repeat;">
-	                            </div>
-	                            <div class="form-group">
-	                                <input type="password" name="password" class="form-control" required="required" placeholder="Password">
-	                            </div>                    
+	                                <input id="inputName" type="text" name="username" class="form-control" required="required" placeholder="username" style="background-image: none; background-position: 0% 0%; background-repeat: repeat;">
+	                            </div>                  
 	                            <div class="form-group col-sm-10 col-sm-offset-1">
-	                                <input type="submit" name="Login" class="btn btn-submit" value="Login">
+	                                <input id="userNameForm" name="Login" class="btn btn-submit" value="Let's Go!" onclick="login()">
 	                            </div>
 	                        </form>
-	                        <div class="text-center">
-	                            <h2 class="col-sm-12">- OR -</h2>
-	                        </div>
-	                        <div class="text-center">
-	                            <a href="#"><img class="img-responsive" src="images/LoginGoogle.png" alt="Log in with Google" /></a>
-	                        </div>
-	                        <div style="margin-bottom: 40px;"></div>
+	                        <div style="height: 80px;"></div>
 	                    </div>
 	                </div>
 
@@ -140,7 +126,7 @@
                 <div class="main-slider">
                     <div class="slide-text">
                         <h1>Welcome, <span class="userName">User!</span></h1>
-                        <p>We have three options for you.</p>
+                        <p>FoodHub is Built on a Three-Step Process.</p>
                     </div>
                 </div>
             </div>
@@ -152,37 +138,36 @@
     	<section id="services">
 	        <div class="container">
 	            <div class="row" id="optionsBox">
-	                
 	                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
 	                    <div class="single-service">
 	                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
-	                            <a href="mealPlan.html"><i style="font-size: 100px;  color: #BBE2BC; padding-bottom:10px;" class="fa fa-calendar"></i></a>
+	                            <a onClick="openRecipe()"><i style="font-size: 100px;  color: #BBE2BC; padding-bottom:10px;" class="fa fa-search"></i></a>
 	                        </div>
-	                        <a href="mealPlan.html">
-	                        	<h2>Plan Meals</h2>
-	                        	<p style="color: gray;">Eliminate the question of what you're going to eat by searching a database of over 350,000 favorite recipes.</p>
+	                        <a onClick="openRecipe()">
+	                        	<h2>1. Search Recipes</h2>
+	                        	<p style="color: gray;">Search a database of 350,000 recipes to choose food you'd like to eat...</p>
 	                    	</a>
 	                    </div>
 	                </div>
 	                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
 	                    <div class="single-service">
 	                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-	                            <a href="groceryList.html"><i style="font-size: 100px; color: #BBE2BC; padding-bottom:10px;" class="fa fa-shopping-cart"></i></a>
+	                            <a onClick="openPlan()"><i style="font-size: 100px;  color: #BBE2BC; padding-bottom:10px;" class="fa fa-calendar"></i></a>
 	                        </div>
-	                        <a href="groceryList.html">
-	                        	<h2>Grocery List</h2>
-	                        	<p style="color: gray;">Manage the Groceries you need in order to cook your favorite Meals - automatically from your recipes, or manaully yourself!</p>
+	                        <a onClick="openPlan()">
+	                        	<h2>2. Plan Meals</h2>
+	                        	<p style="color: gray;">Create a Meal Plan for the week using recipes you selected...</p>
 	                    	</a>
 	                    </div>
 	                </div>
 	                <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
 	                    <div class="single-service">
 	                        <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-	                            <a href="recipeSearch.html"><i style="font-size: 100px;  color: #BBE2BC; padding-bottom:10px;" class="fa fa-search"></i></a>
+	                            <a onClick="openGrocery()"><i style="font-size: 100px; color: #BBE2BC; padding-bottom:10px;" class="fa fa-shopping-cart"></i></a>
 	                        </div>
-	                        <a href="recipeSearch.html">
-	                        	<h2>Search Recipes</h2>
-	                        	<p style="color: gray;">Let's face it, sometimes you don't have a planned week of meals, and you're just in the mood for shrimp-something-or-other tonight.</p>
+	                        <a onClick="openGrocery()">
+	                        	<h2>3. Grocery List</h2>
+	                        	<p style="color: gray;">Take the groceries from the recipes, add any other ones you may need, and head to the store!</p>
 	                    	</a>
 	                    </div>
 	                </div>
@@ -214,74 +199,86 @@
 	    <section class="container">        
 	        <div class="cal-table">
 	            <div class="row groceryTable" style="margin-bottom: 30px;">
-	                <div class="col-sm-6 col-md-2" style="height:100%;">
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="100ms">
 	                    <div class="single-cal cal-one" style="height:100%;">
 	                        <div class="table-heading">
 	                            <p class="day-name">Monday</p>
 	                        </div>
 	                        <div class="table-body text-center" id="monday">
-				    <p>Enter id of desired dish</p>
-				    <input id="monform"></input>
+				    			<p>Enter Dish ID:</p>
+				    			<div style="width: 100%">
+				    				<input id="monform"  style="width: 80%"></input>
+			    				</div>
 	                            <a href="#" onclick="doDay(monday)"><i class="fa fa-plus-circle"></i></a>
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="col-sm-6 col-md-2" style="height:100%;">
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="200ms">
 	                    <div class="single-cal cal-two" style="height:100%;">
 	                        <div class="table-heading">
 	                            <p class="day-name">Tuesday</p>
 	                        </div>                        
 	                        <div class="table-body text-center" id="tuesday">
-				    <p>Enter id of desired dish</p>
-				    <input id="tuesform"></input>
+				    			<p>Enter Dish ID:</p>
+				    			<div style="width: 100%">
+				    				<input id="tuesform" style="width: 80%"></input>
+				    			</div>
 	                            <a href="#" onclick="doDay(tuesday)"><i class="fa fa-plus-circle"></i></a> 
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="col-sm-6 col-md-2" style="height:100%;">
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="300ms">
 	                    <div class="single-cal cal-three" style="height:100%;">
 	                        <div class="table-heading">
 	                            <p class="day-name">Wednesday</p>
 	                        </div>
 	                        <div class="table-body text-center" id="wednesday">
-				    <p>Enter id of desired dish</p>
-				    <input id="wedform"></input>
+							    <p>Enter Dish ID:</p>
+							    <div style="width: 100%">
+							    	<input id="wedform" style="width: 80%"></input>
+							    </div>
 	                            <a href="#" onclick="doDay(wednesday)"><i class="fa fa-plus-circle"></i></a>                           
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="col-sm-6 col-md-2" style="height:100%;">
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="400ms">
 	                    <div class="single-cal cal-four" style="height:100%;">
 	                        <div class="table-heading">
 	                            <p class="day-name">Thursday</p>
 	                        </div>
 	                        <div class="table-body text-center" id="thursday">
-				    <p>Enter id of desired dish</p>
-				    <input id="thursform"></input>
+							    <p>Enter Dish ID:</p>
+							    <div style="width: 100%">
+							    	<input id="thursform"  style="width: 80%"></input>
+							    </div>
 	                            <a href="#" onclick="doDay(thursday)"><i class="fa fa-plus-circle"></i></a>
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="col-sm-6 col-md-2" style="height:100%;">
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="500ms">
 	                    <div class="single-cal cal-two" style="height:100%;">
 	                        <div class="table-heading">
 	                            <p class="day-name">Friday</p>
 	                        </div>                         
 	                        <div class="table-body text-center" id="friday">
-				    <p>Enter id of desired dish</p>
-				    <input id="friform"></input>
+							    <p>Enter Dish ID:</p>
+							    <div style="width: 100%">
+							    	<input id="friform" style="width: 80%"></input>
+						    	</div>
 	                            <a href="#" onclick="doDay(friday)"><i class="fa fa-plus-circle"></i></a>
 	                        </div>
 	                    </div>
 	                </div>
-	                <div class="col-sm-6 col-md-2" style="height:100%;">
+	                <div class="col-sm-6 col-md-2 wow fadeInLeft" style="height:100%;"  data-wow-duration="1000ms" data-wow-delay="600ms">
 	                    <div class="single-cal cal-one" style="height:100%;">
 	                        <div class="table-heading">
 	                            <p class="day-name">Saturday</p>
 	                        </div>                        
 	                        <div class="table-body text-center" id="saturday">
-				    <p>Enter id of desired dish</p>
-				    <input id="satform"></input>
+							    <p>Enter Dish ID:</p>
+							    <div style="width: 100%">
+							    	<input id="satform" style="width: 80%"></input>
+							    </div>
 	                            <a href="#" onclick="doDay(saturday)"><i class="fa fa-plus-circle"></i></a>
 	                        </div>
 	                    </div>
@@ -320,7 +317,7 @@
 		<section id="page-breadcrumb">
 	        <div class="vertical-center sun">
 	             <div class="container">
-	                <div class="row" id="searchOverlay">
+	                <div class="row wow zoomInUp" id="searchOverlay" data-wow-duration="800ms">
 	                    <div class="action">
 	                        <div class="col-sm-3" style="padding-left: 30px;">
 	                            <h1 class="title">Grocery Search</h1>
@@ -329,7 +326,7 @@
 	                        <div class="col-sm-9 pull-right search">
 	                            <form role="form">
 	                                <div id="searchfield">
-	                                    <input type="text"  name="foods" id="autocomplete" class="search-form"  placeholder="Search"><i id="grocerySearchIcon" class="fa fa-search"></i>
+	                                    <input type="text"  name="foods" id="autocomplete" class="search-form"  placeholder="Search" data-toggle="tooltip" data-placement="bottom" title="Search the USDA's National Nutritional Database for a food item, or simply type your own!"><i id="grocerySearchIcon" class="fa fa-search"></i>
 	                                </div>
 	                            </form>
 	                        </div>
@@ -357,7 +354,7 @@
 		<section id="page-breadcrumb">
 	        <div class="vertical-center">
 	             <div class="container">
-	                <div class="row" id="searchOverlay">
+	                <div class="row  wow zoomIn" id="searchOverlay" data-wow-duration="800ms">
 	                    <div class="action">
 	                        <div class="col-sm-3" style="padding-left: 30px;">
 	                            <h1 class="title">Recipe Search</h1>
@@ -374,8 +371,8 @@
 	                </div>
 	            </div>
 	        </div>
-	    </section>
-	    <!--/#action-->
+	   	</section>
+   		<!--recipeSearchBox-->
 		<div id="searchspace">
 		</div>
 	    <section id="recipeSearch">
@@ -390,13 +387,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link1" ><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic1" data-lightbox="example-set" ><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a id="link1" target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic1" data-lightbox="example-set" ><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add1" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text1"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text1"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id1"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -408,13 +407,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a  id="link2"><i class="fa fa-link"></i></a></li>
-	                                        <li><a  id="fancypic2" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')"  id="link2"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a  id="fancypic2" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add2" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info">
-	                                <h2 id="text2"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text2"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id2"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -426,13 +427,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link3"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic3" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link3"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image">><a id="fancypic3" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add3" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text3"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text3"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id3"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -444,13 +447,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link4"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic4" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link4"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic4" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add4" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text4"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text4"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id4"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -462,13 +467,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a href="recipeSearch-details.html" id="link5"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic5" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" href="recipeSearch-details.html" id="link5"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic5" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add5" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text5"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text5"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id5"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -480,13 +487,14 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a href="recipeSearch-details.html" id="link6"><i class="fa fa-link"></i></a></li>
-	                                        <li><a  id="fancypic6" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com">><a href="recipeSearch-details.html" id="link6"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a  id="fancypic6" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add6" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text6"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text6"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id6"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -498,13 +506,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link7"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic7" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link7"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic7" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add7" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text7"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text7"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id7"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -516,13 +526,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link8"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic8" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link8"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic8" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add8" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text8"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text8"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id8"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -534,13 +546,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link9"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic9" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link9"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic9" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add9" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text9"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text9"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id9"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -552,13 +566,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link10"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic10" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link10"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic10" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add10" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text10"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text10"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id10"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -570,13 +586,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a href="recipeSearch-details.html" id="link11"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic11" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" href="recipeSearch-details.html" id="link11"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic11" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add11" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text11"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text11"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id11"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -588,13 +606,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a href="recipeSearch-details.html"  id="link12"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic12" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" href="recipeSearch-details.html"  id="link12"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic12" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add12" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text12"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text12"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id12"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -606,13 +626,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link13"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic13" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link13"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic13" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add13" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text13"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text13"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id13"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -624,13 +646,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link14"><i class="fa fa-link"></i></a></li>
-	                                        <li><a id="fancypic14" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link14"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a id="fancypic14" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add14" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text14"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text14"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id14"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -642,13 +666,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link15"><i class="fa fa-link"></i></a></li>
-	                                        <li><a   id="fancypic15" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link15"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a   id="fancypic15" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add15" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text15"> </h2>
+	                                <h2><span style="font-weight: bold;"  id="text15"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id15"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -660,13 +686,15 @@
 	                                </div>
 	                                <div class="recipeSearch-view">
 	                                    <ul class="nav nav-pills">
-	                                        <li><a id="link16"><i class="fa fa-link"></i></a></li>
-	                                        <li><a  id="fancypic16" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Recipe on BigOven.com"><a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" id="link16"><i class="fa fa-link"></i></a></li>
+	                                        <li data-toggle="tooltip" data-placement="bottom" title="View Full-Size Image"><a  id="fancypic16" data-lightbox="example-set"><i class="fa fa-eye"></i></a></li>
+	                                        <li class="likedContainer" data-toggle="tooltip" data-placement="bottom" title="Add to Your Recipes"><a id="add16" ><i class="fa fa-thumbs-up"></i></a></li>
 	                                    </ul>
 	                                </div>
 	                            </div>
 	                            <div class="recipeSearch-info ">
-	                                <h2 id="text16"></h2>
+	                                <h2><span style="font-weight: bold;"  id="text16"></span> <span class="idLabel" style="font-size:12px; display: none;">- ID: </span><span style="font-size:12px;" id="id16"></span></h2>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -674,10 +702,12 @@
 	            </div>
 	        </div>
 	    </section>
+	    <!--recipeSearchResults-->
 	</div>'
 	<!--recipeSearchDiv-->
 
-
+	<div id="likedRecipes">
+	</div>
 
     <div id="footerSpacer">
     </div>
@@ -687,7 +717,8 @@
                 <div class="col-sm-12">
                     <div class="copyright-text text-center">
                         <p>&copy; Our Group.</p>
-                        <p>Powered by <a target="_blank" href="http://http://www.bigoven.com/">Big Oven</a></p>
+                        <p>Powered by <a target="_blank" onclick="window.open(this.href, 'RecipeWindow',
+'left=200,top=200,width=1000,height=800,toolbar=0')" href="http://http://www.bigoven.com/">Big Oven</a></p>
                     </div>
                 </div>
             </div>
@@ -699,6 +730,9 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+    <script type="text/javascript" src="js/foods-autocomplete.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/searchjavascript.js"></script>
     <script type="text/javascript" src="js/jqueryOwn.js"></script>  

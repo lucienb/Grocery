@@ -76,7 +76,9 @@
   }
 
 
-
+  .groceryItem:hover {
+    cursor:not-allowed;
+  }
 
   ul {
     list-style: none;
@@ -417,6 +419,32 @@ ul.sub-menu {
   border-radius: 20px;
 }
 
+#likedRecipes {
+  position:fixed;
+  bottom: 80px;
+  height: 45px;
+  overflow:hidden;
+  width: 100%;
+}
+
+.likedRecipe {
+  color: #fff;
+  text-align: center;
+  background-color:;
+  background-color: rgba(0,0,0, 0.6);
+  margin-bottom: 3px;
+  margin-right: 3px;
+}
+
+.removeLiked {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  color: #f0f0f0;
+  text-align:center;
+  cursor: pointer;
+}
 
 /*************************
 *******Footer******
@@ -432,6 +460,7 @@ ul.sub-menu {
   background-repeat: repeat-x;
   background-position: bottom;
   background-size: contain;
+  z-index: 10;
 }
 
 #footer h1{
@@ -1971,12 +2000,12 @@ span.stButton_gradient,
 
 .fa-plus-circle {
   font-size: 75px;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .fa-plus-circle:hover {
   font-size: 60px;
-  margin-top: 50px;
+  margin-top: 32px;
 }
 
 #addToCart {
