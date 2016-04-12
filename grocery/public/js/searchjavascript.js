@@ -298,8 +298,8 @@ $(document).ready(function() {
   });
 
   $("#icon").click(
-    $('.idLabel').show();
     function(e) {
+      $('.idLabel').show();
       var myQuery = document.getElementById("inputbox").value;
       var urls = "https://api2.bigoven.com/recipes?title_kw=" + myQuery + "&pg=1&rpp=20&api_key=2MX8tWBt2B3U5VWChEngoRCT4dnHx8Uf";
       document.getElementById("inputbox").value = "";
@@ -339,4 +339,3 @@ $(document).ready(function() {
       });
     });
 })
-
